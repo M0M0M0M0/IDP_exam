@@ -1,0 +1,11 @@
+.dart_tool
+build
+data
+.git
+.idea
+.vscode
+*.md
+*.pdf
+Dockerfile
+docker-compose.yml
+.dockerignore

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Order</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="main.dart.js"></script>
+</head>
+<body>
+  <main class="page">
+    <h1 class="title">My Order</h1>
+
+    <form id="order-form" class="card order-form" novalidate>
+      <div class="row row-2">
+        <div class="field">
+          <label for="item">Item</label>
+          <input id="item" name="item" type="text" placeholder="Item" autocomplete="off">
+        </div>
+        <div class="field">
+          <label for="itemName">Item Name</label>
+          <input id="itemName" name="itemName" type="text" placeholder="Item" autocomplete="off">
+        </div>
+      </div>
+      <div class="row row-3">
+        <div class="field">
+          <label for="price">Price</label>
+          <input id="price" name="price" type="number" min="0" step="any" placeholder="Price">
+        </div>
+        <div class="field">
+          <label for="quantity">Quantity</label>
+          <input id="quantity" name="quantity" type="number" min="1" step="1" placeholder="Quantity">
+        </div>
+        <div class="field">
+          <label for="currency">Currency</label>
+          <select id="currency" name="currency">
+            <option value="USD" selected>USD</option>
+            <option value="EUR">EUR</option>
+            <option value="VND">VND</option>
+            <option value="JPY">JPY</option>
+          </select>
+        </div>
+      </div>
+      <div class="actions">
+        <button id="add-btn" type="submit" class="btn btn-primary">Add Item to Cart</button>
+      </div>
+    </form>
+
+    <div class="search">
+      <label for="search" class="sr-only">Search by Item Name</label>
+      <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><line x1="16.5" y1="16.5" x2="21" y2="21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      <input id="search" type="search" placeholder="Search by Item Name" autocomplete="off">
+    </div>
+
+    <div class="table-wrap card">
+      <table id="orders-table" class="orders">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Item</th>
+            <th>Item Name</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Currency</th>
+            <th class="col-action"><span class="sr-only">Delete</span></th>
+          </tr>
+        </thead>
+        <tbody id="orders-body">
+          <tr class="empty"><td colspan="7">Loading...</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <footer class="footer">Số 8, Tôn Thất Thuyết, Cầu Giấy, Hà Nội</footer>
+
+  <div id="toast-container" class="toast-container" aria-live="polite"></div>
+</body>
+</html>

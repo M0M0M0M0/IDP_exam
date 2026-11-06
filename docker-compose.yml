@@ -1,0 +1,11 @@
+services:
+  order-app:
+    build: .
+    ports:
+      - "8080:8080"
+    volumes:
+      - order-data:/app/data
+    restart: unless-stopped
+
+volumes:
+  order-data:
